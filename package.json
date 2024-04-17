@@ -1,0 +1,17 @@
+{
+  "name": "playwright-api-demo",
+  "description": "api demo using playwright",
+  "version": "1.0.0",
+  "main": "no",
+  "scripts": {},
+  "dependencies": {
+    "playwright": "^1.43.1",
+    "typescript": "^5.4.5"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7"
+  }
+}
