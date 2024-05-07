@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { resourceUsage } from 'process';
 
 
 test('api get request', async ({ request }) => {
@@ -22,7 +21,7 @@ test('api post request', async ({ request }) => {
   })
 
   test('api put request', async ({ request }) => {
-    const response = await request.post("https://reqres.in/api/users/2" , {
+    const response = await request.put("https://reqres.in/api/users/2" , {
       data : {
         "name": "Priyanka",
         "job": "Software Engineer"
