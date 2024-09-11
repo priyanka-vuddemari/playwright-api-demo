@@ -35,3 +35,11 @@ test('api delete request', async ({ request }) => {
   const response = await request.delete("https://reqres.in/api/users/2");
   expect(response.status()).toBe(204);
 });
+
+test('test info demo', async ({ request }, testInfo) => {
+  const response = await request.get("https://reqres.in/api/users?page=2");
+  expect(response.status()).toBe(200);
+  const responseBody = JSON.parse((await response.body()).toString())
+  // console.log(responseBody)
+  testInfo.attach('Response Body', {body : responseBody, contentType : 'application/json'})
+});
