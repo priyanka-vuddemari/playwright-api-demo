@@ -1,0 +1,152 @@
+{
+  "results": {
+    "tool": {
+      "name": "playwright"
+    },
+    "summary": {
+      "tests": 7,
+      "passed": 4,
+      "failed": 3,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1727365670862,
+      "stop": 1727365674946,
+      "suites": 0
+    },
+    "tests": [
+      {
+        "name": "api get request",
+        "status": "passed",
+        "duration": 281,
+        "start": 1727365671,
+        "stop": 1727365672,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/workspaces/playwright-api-demo/tests/api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "api post request",
+        "status": "passed",
+        "duration": 414,
+        "start": 1727365672,
+        "stop": 1727365672,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/workspaces/playwright-api-demo/tests/api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "api put request",
+        "status": "failed",
+        "duration": 365,
+        "start": 1727365672,
+        "stop": 1727365672,
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+        "trace": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at /workspaces/playwright-api-demo/tests/api.spec.ts:30:31",
+        "rawStatus": "failed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/workspaces/playwright-api-demo/tests/api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "api delete request",
+        "status": "passed",
+        "duration": 399,
+        "start": 1727365673,
+        "stop": 1727365674,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/workspaces/playwright-api-demo/tests/api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "test info demo",
+        "status": "passed",
+        "duration": 68,
+        "start": 1727365674,
+        "stop": 1727365674,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/workspaces/playwright-api-demo/tests/api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "has title",
+        "status": "failed",
+        "duration": 3,
+        "start": 1727365674,
+        "stop": 1727365674,
+        "message": "Error: browserType.launch: Executable doesn't exist at /home/codespace/.cache/ms-playwright/chromium-1112/chrome-linux/chrome\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+        "trace": "Error: browserType.launch: Executable doesn't exist at /home/codespace/.cache/ms-playwright/chromium-1112/chrome-linux/chrome\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+        "rawStatus": "failed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/workspaces/playwright-api-demo/tests/example.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > example.spec.ts",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "get started link",
+        "status": "failed",
+        "duration": 10,
+        "start": 1727365674,
+        "stop": 1727365674,
+        "message": "Error: browserType.launch: Executable doesn't exist at /home/codespace/.cache/ms-playwright/chromium-1112/chrome-linux/chrome\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+        "trace": "Error: browserType.launch: Executable doesn't exist at /home/codespace/.cache/ms-playwright/chromium-1112/chrome-linux/chrome\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+        "rawStatus": "failed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/workspaces/playwright-api-demo/tests/example.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > example.spec.ts",
+        "extra": {
+          "annotations": []
+        }
+      }
+    ]
+  }
+}
