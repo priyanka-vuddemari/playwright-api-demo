@@ -22,9 +22,10 @@ jobs:
     ########################################
     # Publish CTRF Results in Teams Channel
     ########################################
+    - name: set webhook url 
+      run : export TEAMS_WEBHOOK_URL=' https://accenture.webhook.office.com/webhookb2/31b70cf6-157e-4344-a4ad-04df1f0c8915@e0793d39-0939-496d-b129-198edd916feb/IncomingWebhook/0522bcd403c54816b2e47153627f8946/ea191185-08a9-427b-8b11-a73f61e8bd6d'
     - name: Publish CTRF Test Summary Results in Teams Channel
-      run: export TEAMS_WEBHOOK_URL=' https://accenture.webhook.office.com/webhookb2/31b70cf6-157e-4344-a4ad-04df1f0c8915@e0793d39-0939-496d-b129-198edd916feb/IncomingWebhook/0522bcd403c54816b2e47153627f8946/ea191185-08a9-427b-8b11-a73f61e8bd6d'
-      run: npx teams-ctrf results ctrf/ctrf-report.json
+      run : npx teams-ctrf results ctrf/ctrf-report.json
       if: always()
     ########################################
     # Publish CTRF Test Summary Results
