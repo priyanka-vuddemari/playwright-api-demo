@@ -34,8 +34,8 @@ jobs:
   ############################################
     # Publish CTRF Results in Teams Channel
   ########################################
-    ##- name: set webhook url 
-    ##  run : export TEAMS_WEBHOOK_URL=''
+    - name: set webhook url 
+      run : export TEAMS_WEBHOOK_URL= ${{ secrets.TEAMS_WEBHOOK_URL }}
     - name: Publish CTRF Test Summary Results in Teams Channel
       run : npx teams-ctrf results ctrf/ctrf-report.json
       if: always()
