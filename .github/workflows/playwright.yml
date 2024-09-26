@@ -4,6 +4,10 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
+env:
+  TEAMS_WEBHOOK_URL: ''
+  
 jobs:
   test:
     timeout-minutes: 60
@@ -35,7 +39,7 @@ jobs:
     # Publish CTRF Results in Teams Channel
   ########################################
     - name: set webhook url 
-      run : export TEAMS_WEBHOOK_URL= ${{ secrets.TEAMS_WEBHOOK_URL }}
+      run : export env.TEAMS_WEBHOOK_URL= ${{ secrets.TEAMS_WEBHOOK_URL }}
     - name: Publish CTRF Test Summary Results in Teams Channel
       run : npx teams-ctrf results ctrf/ctrf-report.json
       if: always()
