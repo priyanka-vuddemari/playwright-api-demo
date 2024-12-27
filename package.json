@@ -5,6 +5,7 @@
   "main": "no",
   "scripts": {},
   "dependencies": {
+    "github-actions-ctrf": "^0.0.54",
     "playwright": "^1.43.1",
     "typescript": "^5.4.5"
   },
@@ -12,7 +13,6 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.45.1",
-    "@types/node": "^20.12.7",
-    "playwright-ctrf-json-reporter": "^0.0.18"
+    "@types/node": "^20.12.7"
   }
 }
