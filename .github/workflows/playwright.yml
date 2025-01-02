@@ -27,7 +27,8 @@ jobs:
     # Publish CTRF Test Summary Results
     ########################################
     - name: Publish CTRF Test Summary Results
-      run: npx github-actions-ctrf summary tests ctrf/ctrf-report.json
+      # run: npx github-actions-ctrf summary ctrf/ctrf-report.json
+      run: npx github-actions-ctrf tests ctrf/ctrf-report.json
       if: always()
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
