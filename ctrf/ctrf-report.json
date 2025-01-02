@@ -1,68 +1,76 @@
 {
   "version": "1.0",
+  "metadata": {
+    "framework": "Playwright",
+    "startTime": "2025-01-02T13:17:58.583Z",
+    "endTime": "2025-01-02T13:18:01.535Z",
+    "totalTests": 7,
+    "passed": 4,
+    "failed": 3
+  },
   "tests": [
     {
       "id": "1ea1b1599cbc08f16936-e53c60fc7b58000918a7",
       "name": "api get request",
       "status": "passed",
-      "duration": 93,
-      "error": null,
-      "stdout": [],
-      "stderr": []
+      "startTime": "2025-01-02T13:17:59.240Z",
+      "endTime": "2025-01-02T13:17:59.347Z",
+      "duration": 107,
+      "logs": []
     },
     {
       "id": "1ea1b1599cbc08f16936-5ce8b29de512ef00a776",
       "name": "api post request",
       "status": "passed",
-      "duration": 284,
-      "error": null,
-      "stdout": [],
-      "stderr": []
+      "startTime": "2025-01-02T13:17:59.374Z",
+      "endTime": "2025-01-02T13:17:59.663Z",
+      "duration": 289,
+      "logs": []
     },
     {
       "id": "1ea1b1599cbc08f16936-5b182285586f80be295a",
       "name": "api put request",
       "status": "failed",
-      "duration": 275,
-      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
-      "stdout": [],
-      "stderr": []
+      "startTime": "2025-01-02T13:17:59.677Z",
+      "endTime": "2025-01-02T13:18:00.000Z",
+      "duration": 323,
+      "logs": []
     },
     {
       "id": "1ea1b1599cbc08f16936-727c323c61002d65ecfd",
       "name": "api delete request",
       "status": "passed",
-      "duration": 326,
-      "error": null,
-      "stdout": [],
-      "stderr": []
+      "startTime": "2025-01-02T13:18:00.514Z",
+      "endTime": "2025-01-02T13:18:00.852Z",
+      "duration": 338,
+      "logs": []
     },
     {
       "id": "1ea1b1599cbc08f16936-f15b8ab1fa6bc7d066bd",
       "name": "test info demo",
       "status": "passed",
-      "duration": 49,
-      "error": null,
-      "stdout": [],
-      "stderr": []
+      "startTime": "2025-01-02T13:18:00.879Z",
+      "endTime": "2025-01-02T13:18:00.920Z",
+      "duration": 41,
+      "logs": []
     },
     {
       "id": "a30a6eba6312f6b87ea5-b06063a3e613764d08f8",
       "name": "has title",
       "status": "failed",
-      "duration": 2,
-      "error": "Error: browserType.launch: Executable doesn't exist at /home/codespace/.cache/ms-playwright/chromium-1134/chrome-linux/chrome\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
-      "stdout": [],
-      "stderr": []
+      "startTime": "2025-01-02T13:18:00.927Z",
+      "endTime": "2025-01-02T13:18:00.931Z",
+      "duration": 4,
+      "logs": []
     },
     {
       "id": "a30a6eba6312f6b87ea5-274e97907a6e3638a22f",
       "name": "get started link",
       "status": "failed",
-      "duration": 6,
-      "error": "Error: browserType.launch: Executable doesn't exist at /home/codespace/.cache/ms-playwright/chromium-1134/chrome-linux/chrome\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
-      "stdout": [],
-      "stderr": []
+      "startTime": "2025-01-02T13:18:01.463Z",
+      "endTime": "2025-01-02T13:18:01.471Z",
+      "duration": 8,
+      "logs": []
     }
   ]
 }
