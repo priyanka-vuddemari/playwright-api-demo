@@ -1,74 +1,43 @@
 import { Reporter, TestCase, TestResult } from '@playwright/test/reporter';
 import fs from 'fs';
 
-interface CTRFTest {
-  id: string;
-  name: string;
-  status: string;
-  startTime: string;
-  endTime: string;
-  duration: number;
-  logs: string[];
-}
-
-interface CTRFSummary {
-  total: number;
-  passed: number;
-  failed: number;
-  skipped: number;
-  flaky: number;
-}
-
-interface CTRFReport {
-  version: string;
-  metadata: {
-    framework: string;
-    startTime: string;
-    endTime: string;
-    summary: CTRFSummary;
-  };
-  tests: CTRFTest[];
-}
-
 class CTRFReporter implements Reporter {
-  private tests: CTRFTest[] = [];
-  private startTime: Date = new Date();
+  private tests: any[] = [];
+  private startTime: number = Date.now();
 
   onTestEnd(test: TestCase, result: TestResult) {
-    const testLog: CTRFTest = {
-      id: test.id,
+    const duration = result.duration;
+
+    this.tests.push({
       name: test.title,
       status: result.status,
-      startTime: new Date(result.startTime).toISOString(),
-      endTime: new Date(new Date(result.startTime).getTime() + result.duration).toISOString(),
-      duration: result.duration,
-      logs: result.stdout.map((log) => log.toString()),
-    };
-    this.tests.push(testLog);
+      duration,
+    });
   }
 
   async onEnd() {
-    const endTime = new Date();
+    const stopTime = Date.now();
     const passed = this.tests.filter((test) => test.status === 'passed').length;
     const failed = this.tests.filter((test) => test.status === 'failed').length;
     const skipped = this.tests.filter((test) => test.status === 'skipped').length;
-    const flaky = this.tests.filter((test) => test.status === 'flaky').length;
 
-    const report: CTRFReport = {
-      version: '1.0',
-      metadata: {
-        framework: 'Playwright',
-        startTime: this.startTime.toISOString(),
-        endTime: endTime.toISOString(),
+    const report = {
+      results: {
+        tool: {
+          name: 'Playwright',
+        },
         summary: {
-          total: this.tests.length,
+          tests: this.tests.length,
           passed,
           failed,
+          pending: 0, // Playwright doesn't have a 'pending' status by default
           skipped,
-          flaky,
+          other: 0, // Placeholder for undefined statuses
+          start: this.startTime,
+          stop: stopTime,
         },
+        tests: this.tests,
       },
-      tests: this.tests,
     };
 
     fs.writeFileSync('ctrf/ctrf-report.json', JSON.stringify(report, null, 2));
