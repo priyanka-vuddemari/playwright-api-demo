@@ -1,4 +1,4 @@
-import { Reporter, TestCase, TestResult, Suite } from '@playwright/test/reporter';
+import { Reporter, TestCase, TestResult } from '@playwright/test/reporter';
 import fs from 'fs';
 
 interface CTRFTest {
@@ -11,15 +11,21 @@ interface CTRFTest {
   logs: string[];
 }
 
+interface CTRFSummary {
+  total: number;
+  passed: number;
+  failed: number;
+  skipped: number;
+  flaky: number;
+}
+
 interface CTRFReport {
   version: string;
   metadata: {
     framework: string;
     startTime: string;
     endTime: string;
-    totalTests: number;
-    passed: number;
-    failed: number;
+    summary: CTRFSummary;
   };
   tests: CTRFTest[];
 }
@@ -45,6 +51,8 @@ class CTRFReporter implements Reporter {
     const endTime = new Date();
     const passed = this.tests.filter((test) => test.status === 'passed').length;
     const failed = this.tests.filter((test) => test.status === 'failed').length;
+    const skipped = this.tests.filter((test) => test.status === 'skipped').length;
+    const flaky = this.tests.filter((test) => test.status === 'flaky').length;
 
     const report: CTRFReport = {
       version: '1.0',
@@ -52,9 +60,13 @@ class CTRFReporter implements Reporter {
         framework: 'Playwright',
         startTime: this.startTime.toISOString(),
         endTime: endTime.toISOString(),
-        totalTests: this.tests.length,
-        passed,
-        failed,
+        summary: {
+          total: this.tests.length,
+          passed,
+          failed,
+          skipped,
+          flaky,
+        },
       },
       tests: this.tests,
     };
