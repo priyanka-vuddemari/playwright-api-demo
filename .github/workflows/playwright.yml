@@ -6,7 +6,7 @@ on:
     branches: [ main, master ]
 
 env:
-  TEAMS_WEBHOOK_URL: '',
+  TEAMS_WEBHOOK_URL: ''
   CI: false
   
 jobs:
