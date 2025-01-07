@@ -7,7 +7,7 @@ on:
 
 env:
   TEAMS_WEBHOOK_URL: ''
-  CI: true
+  CI_OVERRIDE: true
   
 jobs:
   test:
