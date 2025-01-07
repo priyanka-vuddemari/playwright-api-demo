@@ -7,7 +7,7 @@ on:
 
 env:
   TEAMS_WEBHOOK_URL: ''
-  CI: false
+  CI: true
   
 jobs:
   test:
@@ -24,8 +24,6 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test tests/api.spec.ts
-    - name: Suppress GitHub Annotations
-      run: sed -i '/::error\|::warning\|::notice/d' test-output.log
     ########################################
     # Publish CTRF Test Summary Results
     ########################################
