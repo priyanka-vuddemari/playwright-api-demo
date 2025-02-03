@@ -13,6 +13,7 @@
   "devDependencies": {
     "@playwright/test": "^1.45.1",
     "@types/node": "^20.12.7",
-    "github-actions-ctrf": "^0.0.54"
+    "github-actions-ctrf": "^0.0.54",
+    "playwright-ctrf-json-reporter": "^0.0.18"
   }
 }
