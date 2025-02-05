@@ -21,9 +21,10 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: |
-        npx playwright test tests/api.spec.ts > filtered-output.log 2>&1
-        sed -i '/::error\|::warning\|::notice/d' filtered-output.log
-        cat filtered-output.log
+           npx playwright test tests/api.spec.ts
+        # npx playwright test tests/api.spec.ts > filtered-output.log 2>&1
+        # sed -i '/::error\|::warning\|::notice/d' filtered-output.log
+        # cat filtered-output.log
     ########################################
     # Publish CTRF Test Summary Results
     ########################################
