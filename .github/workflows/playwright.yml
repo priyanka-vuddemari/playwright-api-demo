@@ -29,8 +29,8 @@ jobs:
     ########################################
     - name: Publish CTRF Test Summary Results
       run: |
-       npx github-actions-ctrf suite-folded summary ctrf/ctrf-report.json
-      #  npx github-actions-ctrf  ctrf/ctrf-report.json
+       npx github-actions-ctrf suite-folded ctrf/ctrf-report.json
+       npx github-actions-ctrf summary ctrf/ctrf-report.json
       if: always()
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
@@ -46,3 +46,19 @@ jobs:
     # - name: Publish CTRF Test Summary Results in Teams Channel
     #   run : npx teams-ctrf results ctrf/ctrf-report.json
     #   if: always()
+
+  ############################################
+    # Publish CTRF Results in Teams Channel
+  ########################################
+    - name: Read Summary Report to Get Test Results
+      if: always()
+      run: |
+        STATUS=$(cat ./summary.json | jq -r '.status')
+        echo "STATUS=$STATUS" >> $GITHUB_ENV 
+        PASSED=$(cat ./summary.json | jq -r '.passed[]' | tr '\n' ' ')
+        echo "PASSED=$PASSED" >> $GITHUB_ENV 
+        TIMEOUT=$(cat ./summary.json | jq -r '.timedOut[]' | tr '\n' ' ' | sed 's/ /--->TIMEOUT /g')
+        FAILURES=$(cat ./summary.json | jq -r '.failed[]' | tr '\n' ' ')
+        FAILURES+=$TIMEOUT
+        echo "FAILURES=$FAILURES" >> $GITHUB_ENV
+...

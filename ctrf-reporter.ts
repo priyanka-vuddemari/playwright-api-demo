@@ -40,7 +40,7 @@ class CTRFReporter implements Reporter {
       },
     };
 
-    fs.writeFileSync('ctrf/ctrf-report.json', JSON.stringify(report, null, 2));
+    fs.writeFileSync('summary.json', JSON.stringify(report, null, 2));
     console.log('CTRF report written to ctrf-report.json');
   }
 }
