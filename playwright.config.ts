@@ -22,7 +22,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', {outputFolder : 'playwright-report', open: 'never'}], 
   // ['playwright-ctrf-json-reporter',{}]
-  ['./ctrf-reporter.ts', {}]
+  ['line'],['./ctrf-reporter.ts', {}]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
