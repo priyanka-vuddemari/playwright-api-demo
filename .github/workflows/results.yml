@@ -1,0 +1,76 @@
+# name: Fetch Playwright Test Results
+
+# on:
+#   workflow_dispatch:
+
+# jobs:
+#   fetch-results:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v4
+
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: '14'
+
+#     - name: Install dependencies
+#       run: npm install axios @octokit/rest
+
+#     - name: Fetch and format results
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       run: |
+#         const axios = require('axios');
+#         const { Octokit } = require('@octokit/rest');
+
+#         const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
+#         const repositories = [
+#           'owner/repo1',
+#           'owner/repo2',
+#           'owner/repo3',
+#         ];
+
+#         const workflowFileName = 'playwright.yml';
+
+#         const octokit = new Octokit({
+#           auth: GITHUB_TOKEN,
+#         });
+
+#         async function fetchWorkflowRuns(owner, repo) {
+#           const response = await octokit.actions.listWorkflowRunsForRepo({
+#             owner,
+#             repo,
+#             workflow_id: workflowFileName,
+#             per_page: 5,
+#           });
+#           return response.data.workflow_runs;
+#         }
+
+#         async function main() {
+#           const results = [];
+
+#           for (const repository of repositories) {
+#             const [owner, repo] = repository.split('/');
+#             const workflowRuns = await fetchWorkflowRuns(owner, repo);
+
+#             for (const run of workflowRuns) {
+#               const { id, status, conclusion, html_url, created_at, updated_at } = run;
+#               results.push({
+#                 repository,
+#                 id,
+#                 status,
+#                 conclusion,
+#                 html_url,
+#                 created_at,
+#                 updated_at,
+#               });
+#             }
+#           }
+
+#           console.table(results);
+#         }
+
+#         main().catch(console.error);
